@@ -1,0 +1,35 @@
+{
+  "name": "drkp/doctrine-metadata-configuration-factory",
+  "authors": [
+    {
+      "name": "ddniel16",
+      "role": "Developer"
+    },
+    {
+      "name": "Kpicaza",
+      "role": "Developer"
+    }
+  ],
+  "description": "Factory class to create Doctrine 2  ORM Configuration instances.",
+  "license": "MIT",
+  "keywords": [
+    "ORM",
+    "Doctrine",
+    "Configuration"
+  ],
+  "type": "library",
+  "autoload": {
+    "psr-4": {
+      "DRKP\\ZF3Doctrine\\": "./src/"
+    }
+  },
+  "require": {
+    "php": "^5.5 || ^7.0",
+    "doctrine/orm" : "^2.5"
+  },
+  "require-dev": {
+    "memio/spec-gen": "^0.6",
+    "phpspec/phpspec": "^3.0@beta",
+    "henrikbjorn/phpspec-code-coverage": "^3.0"
+  }
+}

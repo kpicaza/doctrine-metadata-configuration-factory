@@ -1,0 +1,23 @@
+filter:
+    excluded_paths:
+        - vendor/*
+        - spec/*
+build:
+    environment:
+        php: 5.6
+    tests:
+        override:
+            -
+                command: './vendor/bin/phpspec run'
+                coverage:
+                    file: 'clover.xml'
+                    format: 'clover'
+
+    dependencies:
+        before:
+            - cp phpspec.yml.dist phpspec.yml
+
+checks:
+    php:
+        code_rating: true
+        duplication: true

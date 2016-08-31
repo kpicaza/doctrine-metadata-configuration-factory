@@ -1,0 +1,7 @@
+# Configuration
+/phpspec.yml
+
+# Third party libraries
+/vendor/
+/composer.lock
+
