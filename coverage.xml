@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1472679169">
-  <project timestamp="1472679169">
+<coverage generated="1472681083">
+  <project timestamp="1472681083">
     <package name="DRKP\ZF3Doctrine">
       <file name="/home/kpicaza/server/zf3-doctrine/packages/drkp/doctrine-metadata-configuration-factory/src/DRKP/ZF3Doctrine/MetadataConfigurationFactory.php">
         <class name="MetadataConfigurationFactory" namespace="DRKP\ZF3Doctrine">

@@ -10,12 +10,11 @@ build:
             -
                 command: './vendor/bin/phpspec run'
                 coverage:
-                    file: 'clover.xml'
+                    file: 'coverage.xml'
                     format: 'clover'
 
     dependencies:
         before:
-            - composer install --no-interaction --optimize-autoloader
             - cp phpspec.yml.dist phpspec.yml
 
 checks:
