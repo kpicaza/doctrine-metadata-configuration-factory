@@ -20,7 +20,7 @@
   "type": "library",
   "autoload": {
     "psr-4": {
-      "DRKP\\ZF3Doctrine\\": "./src/"
+      "DRKP\\": "./src/DRKP/"
     }
   },
   "require": {
