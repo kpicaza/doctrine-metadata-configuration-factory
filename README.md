@@ -1,10 +1,20 @@
 ZF3 Doctrine Metadata configuration Factory
 ===========================================
 
+[![Build Status](https://scrutinizer-ci.com/g/kpicaza/doctrine-metadata-configuration-factory/badges/build.png?b=master)](https://scrutinizer-ci.com/g/kpicaza/doctrine-metadata-configuration-factory/build-status/master)
+[![Code Coverage](https://scrutinizer-ci.com/g/kpicaza/doctrine-metadata-configuration-factory/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/kpicaza/doctrine-metadata-configuration-factory/?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/kpicaza/doctrine-metadata-configuration-factory/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/kpicaza/doctrine-metadata-configuration-factory/?branch=master)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/c6b276fe-849b-41b7-b78e-4a4342a9b274/mini.png)](https://insight.sensiolabs.com/projects/c6b276fe-849b-41b7-b78e-4a4342a9b274)
+
 Factory class to create Doctrine 2  ORM Configuration instances.
 
 Provides simple way to decide what kind of mapping you prefer in your project.
 
+## Instalation
+
+````
+composer require drkp/doctrine-metadata-configuration-factory
+````
 ## Simple Usage:
 
 ````
