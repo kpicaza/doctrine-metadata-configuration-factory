@@ -35,13 +35,13 @@ $mapping = [
 ];
 
 $config = new \DRKP\ZF3Doctrine\MetadataConfigurationFactory(
-    $config['mappings'],
-    $config['mappings'][0]['type']
+    $mapping['mappings'],
+    $mapping['mappings'][0]['type']
 );
 
 $entityManager = \Doctrine\ORM\EntityManager::create(
-    $config['dbal'],
-    $container->get(MetadataConfigurationFactory::class)->make()
+    $mapping['dbal'],
+    $config->make()
 );
 
 $repository = $entityManager->getRepository(\Some\Namespace::class);
@@ -91,7 +91,7 @@ $config = new MetadataConfigurationFactory(
 
 $defaultEntityManager = EntityManager::create(
     $mapping['dbal'],
-    $container->get(MetadataConfigurationFactory::class)->make()
+    $config->make()
 );
 
 $config1 = new MetadataConfigurationFactory(
@@ -100,8 +100,8 @@ $config1 = new MetadataConfigurationFactory(
 );
 
 $secondaryEntityManager = EntityManager::create(
-    $config['dbal1'],
-    $container->get(MetadataConfigurationFactory::class)->make()
+    $mapping['dbal1'],
+    $config1->make()
 );
 
 $repository = $defaultEntityManager->getRepository(\Some\Namespace::class);
