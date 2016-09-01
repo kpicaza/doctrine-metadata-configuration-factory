@@ -1,5 +1,5 @@
-ZF3 Doctrine Metadata configuration Factory
-===========================================
+Doctrine Metadata configuration Factory
+=======================================
 
 [![Build Status](https://scrutinizer-ci.com/g/kpicaza/doctrine-metadata-configuration-factory/badges/build.png?b=master)](https://scrutinizer-ci.com/g/kpicaza/doctrine-metadata-configuration-factory/build-status/master)
 [![Code Coverage](https://scrutinizer-ci.com/g/kpicaza/doctrine-metadata-configuration-factory/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/kpicaza/doctrine-metadata-configuration-factory/?branch=master)
