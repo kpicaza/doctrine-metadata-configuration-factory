@@ -35,12 +35,12 @@ $mapping = [
 ];
 
 $config = new \DRKP\ZF3Doctrine\MetadataConfigurationFactory(
-    $config['orm']['orm.em.options']['mappings'],
-    $config['orm']['orm.em.options']['mappings'][0]['type']
+    $config['mappings'],
+    $config['mappings'][0]['type']
 );
 
 $entityManager = \Doctrine\ORM\EntityManager::create(
-    $config['dbal']['db.options'],
+    $config['dbal'],
     $container->get(MetadataConfigurationFactory::class)->make()
 );
 
@@ -85,22 +85,22 @@ $mapping = [
 ];
 
 $config = new MetadataConfigurationFactory(
-    $config['mappings'],
-    $config['mappings'][0]['type']
+    $mapping['mappings'],
+    $mapping['mappings'][0]['type']
 );
 
 $defaultEntityManager = EntityManager::create(
-    $config['dbal']['db.options'],
+    $mapping['dbal'],
     $container->get(MetadataConfigurationFactory::class)->make()
 );
 
 $config1 = new MetadataConfigurationFactory(
-    $config['orm']['orm.em.options']['mappings'],
+    $mapping['mappings'],
     'yaml'
 );
 
 $secondaryEntityManager = EntityManager::create(
-    $config['dbal1']['db.options'],
+    $config['dbal1'],
     $container->get(MetadataConfigurationFactory::class)->make()
 );
 
