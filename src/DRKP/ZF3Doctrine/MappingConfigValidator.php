@@ -9,7 +9,7 @@ namespace DRKP\ZF3Doctrine;
 class MappingConfigValidator
 {
     /**
-     * @param array $mapping
+     * @param array $mappings
      * @return bool
      */
     public static function validate(array $mappings)

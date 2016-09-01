@@ -9,12 +9,6 @@ use Prophecy\Argument;
 
 class MetadataConfigurationFactorySpec extends ObjectBehavior
 {
-    const VALID_MAPPING_TYPES = [
-        'yaml',
-        'xml',
-        'annotation'
-    ];
-
     const CONFIG_ANNOTATION = [
         "mappings" => [
             [

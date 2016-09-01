@@ -5,6 +5,10 @@ namespace DRKP\ZF3Doctrine;
 use Doctrine\Common\Cache\Cache;
 use Doctrine\ORM\Tools\Setup;
 
+/**
+ * Class MetadataConfigurationFactory
+ * @package DRKP\ZF3Doctrine
+ */
 class MetadataConfigurationFactory
 {
     /**
@@ -52,8 +56,11 @@ class MetadataConfigurationFactory
 
     /**
      * MetadataConfigurationFactory constructor.
-     * @param $mappings
+     * @param array $mappings
      * @param $type
+     * @param bool $isDevMode
+     * @param null $proxyDir
+     * @param Cache|null $cache
      */
     public function __construct(array $mappings, $type, $isDevMode = false, $proxyDir = null, Cache $cache = null)
     {
@@ -87,18 +94,16 @@ class MetadataConfigurationFactory
             'annotation' === $this->type ? ucfirst($this->type) : strtoupper($this->type)
         );
 
-        $mappings = array_map(function ($mapping) {
-            return $mapping['path'];
-        }, array_filter($this->mappings, function ($mapping) {
-            return $this->type === $mapping['type'];
-        }));
-
-        return Setup::$metadataConfigMethod(
-            $mappings,
-            $this->isDevMode,
-            $this->proxyDir,
-            $this->cache
+        $mappings = array_map(
+            function ($mapping) {
+                return $mapping['path'];
+            },
+            array_filter($this->mappings, function ($mapping) {
+                return $this->type === $mapping['type'];
+            })
         );
+
+        return Setup::$metadataConfigMethod($mappings, $this->isDevMode, $this->proxyDir, $this->cache);
     }
 
 }
