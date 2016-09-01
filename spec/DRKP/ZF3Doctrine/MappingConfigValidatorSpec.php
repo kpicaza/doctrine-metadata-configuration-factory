@@ -20,17 +20,42 @@ class MappingConfigValidatorSpec extends ObjectBehavior
         "posth" => __DIR__ . "/test/mapping",
     ];
 
+    const MULTIPLE_MAPPINGS = [
+            [
+                "type" => "xml",
+                "namespace" => "DRKP\\ZF3Doctrine\\Tests\\ORM\\Mapping",
+                "path" => __DIR__ . "/test/mapping",
+            ],
+            [
+                "type" => "xml",
+                "namespace" => "DRKP\\ZF3Doctrine\\Tests\\ORM\\Mapping",
+                "path" => __DIR__ . "/test/mapping",
+            ],
+            [
+                "type" => "yaml",
+                "namespace" => "DRKP\\ZF3Doctrine\\Tests\\ORM\\Mapping",
+                "path" => __DIR__ . "/test/mapping",
+            ],
+    ];
+
     function it_should_thrown_an_exception_when_mapping_is_not_valid()
     {
-        $this->validate(
+        $this->validate([
             self::INVALID_CONFIG_MAPPING
-        )->shouldBe(false);
+        ])->shouldBe(false);
     }
 
     function it_have_valid_mapping_configuration()
     {
-        $this->validate(
+        $this->validate([
             self::CONFIG_ANNOTATION
+        ])->shouldBe(true);
+    }
+
+    function it_can_validate_multiple_mappings()
+    {
+        $this->validate(
+            self::MULTIPLE_MAPPINGS
         )->shouldBe(true);
     }
 }

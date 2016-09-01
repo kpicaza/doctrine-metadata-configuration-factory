@@ -12,16 +12,12 @@ class MappingConfigValidator
      * @param array $mapping
      * @return bool
      */
-    public static function validate(array $mapping)
+    public static function validate(array $mappings)
     {
-        if (
-            !array_key_exists('path', $mapping) ||
+        return 0 === count(array_filter($mappings, function ($mapping) {
+            return !array_key_exists('path', $mapping) ||
             !array_key_exists('namespace', $mapping) ||
-            !array_key_exists('type', $mapping)
-        ) {
-            return false;
-        }
-
-        return true;
+            !array_key_exists('type', $mapping);
+        }));
     }
 }

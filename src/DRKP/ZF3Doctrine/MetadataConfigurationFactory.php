@@ -57,12 +57,10 @@ class MetadataConfigurationFactory
      */
     public function __construct(array $mappings, $type, $isDevMode = false, $proxyDir = null, Cache $cache = null)
     {
-        foreach ($mappings as $mapping) {
-            if (false === MappingConfigValidator::validate($mapping)) {
-                throw new \InvalidArgumentException(
-                    'Mapping type should have at least an array with following keys ' . implode(', ', self::MAPPING_KEYS)
-                );
-            }
+        if (false === MappingConfigValidator::validate($mappings)) {
+            throw new \InvalidArgumentException(
+                'Mapping type should have at least an array with following keys ' . implode(', ', self::MAPPING_KEYS)
+            );
         }
 
         $this->mappings = $mappings;
@@ -89,14 +87,11 @@ class MetadataConfigurationFactory
             'annotation' === $this->type ? ucfirst($this->type) : strtoupper($this->type)
         );
 
-        $mappings = [];
-
-        foreach ($this->mappings as $mapping) {
-            if ($this->type !== $mapping['type']) {
-                continue;
-            }
-            $mappings[] = $mapping['path'];
-        }
+        $mappings = array_map(function ($mapping) {
+            return $mapping['path'];
+        }, array_filter($this->mappings, function ($mapping) {
+            return $this->type === $mapping['type'];
+        }));
 
         return Setup::$metadataConfigMethod(
             $mappings,
