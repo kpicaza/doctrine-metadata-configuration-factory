@@ -1,47 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1472681083">
-  <project timestamp="1472681083">
+<coverage generated="1472762307">
+  <project timestamp="1472762307">
     <package name="DRKP\ZF3Doctrine">
+      <file name="/home/kpicaza/server/zf3-doctrine/packages/drkp/doctrine-metadata-configuration-factory/src/DRKP/ZF3Doctrine/MappingConfigValidator.php">
+        <class name="MappingConfigValidator" namespace="DRKP\ZF3Doctrine" fullPackage="DRKP" package="DRKP">
+          <metrics complexity="4" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="7" coveredelements="7"/>
+        </class>
+        <line num="15" type="method" name="validate" visibility="public" complexity="4" crap="4" count="8"/>
+        <line num="18" type="stmt" count="8"/>
+        <line num="19" type="stmt" count="6"/>
+        <line num="20" type="stmt" count="6"/>
+        <line num="21" type="stmt" count="8"/>
+        <line num="22" type="stmt" count="2"/>
+        <line num="25" type="stmt" count="6"/>
+        <metrics loc="27" ncloc="19" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="7" coveredelements="7"/>
+      </file>
       <file name="/home/kpicaza/server/zf3-doctrine/packages/drkp/doctrine-metadata-configuration-factory/src/DRKP/ZF3Doctrine/MetadataConfigurationFactory.php">
         <class name="MetadataConfigurationFactory" namespace="DRKP\ZF3Doctrine">
-          <metrics complexity="10" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="31" coveredstatements="31" elements="33" coveredelements="33"/>
+          <metrics complexity="8" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="32" coveredstatements="32" elements="34" coveredelements="34"/>
         </class>
-        <line num="47" type="method" name="__construct" visibility="public" complexity="6" crap="6" count="6"/>
-        <line num="49" type="stmt" count="6"/>
-        <line num="51" type="stmt" count="6"/>
-        <line num="52" type="stmt" count="5"/>
-        <line num="53" type="stmt" count="5"/>
-        <line num="54" type="stmt" count="6"/>
-        <line num="55" type="stmt" count="1"/>
-        <line num="56" type="stmt" count="1"/>
-        <line num="57" type="stmt" count="1"/>
-        <line num="59" type="stmt" count="5"/>
-        <line num="61" type="stmt" count="5"/>
-        <line num="63" type="stmt" count="5"/>
+        <line num="58" type="method" name="__construct" visibility="public" complexity="4" crap="4" count="6"/>
+        <line num="60" type="stmt" count="6"/>
+        <line num="61" type="stmt" count="6"/>
+        <line num="62" type="stmt" count="1"/>
+        <line num="63" type="stmt" count="1"/>
         <line num="64" type="stmt" count="1"/>
-        <line num="65" type="stmt" count="1"/>
-        <line num="66" type="stmt" count="1"/>
-        <line num="69" type="stmt" count="4"/>
-        <line num="70" type="stmt" count="4"/>
-        <line num="71" type="stmt" count="4"/>
-        <line num="76" type="method" name="make" visibility="public" complexity="4" crap="4" count="4"/>
+        <line num="66" type="stmt" count="5"/>
+        <line num="68" type="stmt" count="5"/>
+        <line num="70" type="stmt" count="5"/>
+        <line num="71" type="stmt" count="1"/>
+        <line num="72" type="stmt" count="1"/>
+        <line num="73" type="stmt" count="1"/>
+        <line num="76" type="stmt" count="4"/>
+        <line num="77" type="stmt" count="4"/>
         <line num="78" type="stmt" count="4"/>
         <line num="79" type="stmt" count="4"/>
         <line num="80" type="stmt" count="4"/>
-        <line num="81" type="stmt" count="4"/>
-        <line num="83" type="stmt" count="4"/>
-        <line num="85" type="stmt" count="4"/>
-        <line num="86" type="stmt" count="4"/>
-        <line num="87" type="stmt" count="1"/>
+        <line num="85" type="method" name="make" visibility="public" complexity="4" crap="4" count="4"/>
+        <line num="87" type="stmt" count="4"/>
+        <line num="88" type="stmt" count="4"/>
         <line num="89" type="stmt" count="4"/>
         <line num="90" type="stmt" count="4"/>
         <line num="92" type="stmt" count="4"/>
-        <line num="93" type="stmt" count="4"/>
         <line num="94" type="stmt" count="4"/>
         <line num="95" type="stmt" count="4"/>
-        <metrics loc="98" ncloc="75" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="31" coveredstatements="31" elements="33" coveredelements="33"/>
+        <line num="96" type="stmt" count="1"/>
+        <line num="98" type="stmt" count="4"/>
+        <line num="99" type="stmt" count="4"/>
+        <line num="101" type="stmt" count="4"/>
+        <line num="102" type="stmt" count="4"/>
+        <line num="103" type="stmt" count="4"/>
+        <line num="104" type="stmt" count="4"/>
+        <line num="105" type="stmt" count="4"/>
+        <line num="106" type="stmt" count="4"/>
+        <metrics loc="109" ncloc="80" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="32" coveredstatements="32" elements="34" coveredelements="34"/>
       </file>
     </package>
-    <metrics files="1" loc="98" ncloc="75" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="31" coveredstatements="31" elements="33" coveredelements="33"/>
+    <metrics files="2" loc="136" ncloc="99" classes="2" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="38" coveredstatements="38" elements="41" coveredelements="41"/>
   </project>
 </coverage>

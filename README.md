@@ -105,6 +105,6 @@ $secondaryEntityManager = EntityManager::create(
 );
 
 $repository = $defaultEntityManager->getRepository(\Some\Namespace::class);
-$secondaryRepository = $secondaryEntityManager->getRepository(\Some\Namespace::class);
+$secondaryRepository = $secondaryEntityManager->getRepository(\Some\Other\Namespace::class);
 
 ````

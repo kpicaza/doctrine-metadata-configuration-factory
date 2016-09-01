@@ -2,6 +2,7 @@
 
 namespace DRKP\ZF3Doctrine;
 
+use Doctrine\Common\Cache\Cache;
 use Doctrine\ORM\Tools\Setup;
 
 class MetadataConfigurationFactory
@@ -37,21 +38,27 @@ class MetadataConfigurationFactory
     /**
      * @var bool
      */
-    private $env;
+    private $isDevMode;
+
+    /**
+     * @var null
+     */
+    private $proxyDir;
+
+    /**
+     * @var Cache
+     */
+    private $cache;
 
     /**
      * MetadataConfigurationFactory constructor.
      * @param $mappings
      * @param $type
      */
-    public function __construct(array $mappings, $type, $env = false)
+    public function __construct(array $mappings, $type, $isDevMode = false, $proxyDir = null, Cache $cache = null)
     {
         foreach ($mappings as $mapping) {
-            if (
-                !array_key_exists('path', $mapping) ||
-                !array_key_exists('namespace', $mapping) ||
-                !array_key_exists('type', $mapping)
-            ) {
+            if (false === MappingConfigValidator::validate($mapping)) {
                 throw new \InvalidArgumentException(
                     'Mapping type should have at least an array with following keys ' . implode(', ', self::MAPPING_KEYS)
                 );
@@ -67,7 +74,9 @@ class MetadataConfigurationFactory
         }
 
         $this->type = $type;
-        $this->env = $env;
+        $this->isDevMode = $isDevMode;
+        $this->proxyDir = $proxyDir;
+        $this->cache = $cache;
     }
 
     /**
@@ -91,7 +100,9 @@ class MetadataConfigurationFactory
 
         return Setup::$metadataConfigMethod(
             $mappings,
-            $this->env
+            $this->isDevMode,
+            $this->proxyDir,
+            $this->cache
         );
     }
 

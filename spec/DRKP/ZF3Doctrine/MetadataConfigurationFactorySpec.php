@@ -109,20 +109,6 @@ class MetadataConfigurationFactorySpec extends ObjectBehavior
         $this->make()->shouldReturnAnInstanceOf(Configuration::class);
     }
 
-    function it_should_thrown_an_exception_when_mapping_type_is_not_valid()
-    {
-        $mapping = self::CONFIG_YAML;
-
-        $this->beConstructedWith(
-            $mapping['mappings'],
-            self::INVALID_CONFIG_TYPE
-        );
-
-        $this->shouldThrow(
-            \InvalidArgumentException::class
-        )->duringInstantiation();
-    }
-
     function it_can_be_annotation_configuration_class()
     {
         $mapping = self::CONFIG_ANNOTATION;
@@ -144,6 +130,21 @@ class MetadataConfigurationFactorySpec extends ObjectBehavior
 
         $this->make()->shouldReturnAnInstanceOf(Configuration::class);
     }
+
+    function it_should_thrown_an_exception_when_mapping_type_is_not_valid()
+    {
+        $mapping = self::CONFIG_YAML;
+
+        $this->beConstructedWith(
+            $mapping['mappings'],
+            self::INVALID_CONFIG_TYPE
+        );
+
+        $this->shouldThrow(
+            \InvalidArgumentException::class
+        )->duringInstantiation();
+    }
+
 
     function it_should_ignore_mappings_with_diferent_mapping_type_than_expected()
     {
